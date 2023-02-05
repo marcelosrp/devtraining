@@ -1,9 +1,9 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { Curse } from './entities/course.entity';
+import { Course } from './entities/course.entity';
 
 @Injectable()
 export class CoursesService {
-  private courses: Curse[] = [
+  private courses: Course[] = [
     {
       id: 1,
       name: 'Fundamentos do framework NestJS',
@@ -18,7 +18,7 @@ export class CoursesService {
 
   findOne(id: string) {
     const course = this.courses.find(
-      (course: Curse) => course.id === Number(id),
+      (course: Course) => course.id === Number(id),
     );
 
     if (!course) {
